@@ -22,6 +22,8 @@ import android.content.SharedPreferences;
 
 import com.droidwolf.nativesubprocess.Subprocess;
 
+import java.io.IOException;
+
 public class WatchDog extends Subprocess {
 	private final Object mSync = new Object();
 
@@ -34,6 +36,11 @@ public class WatchDog extends Subprocess {
 		regWatchers(getParentPid());
 		holdMainThread();
 		unregWatchers();
+
+		try {
+			Runtime.getRuntime().exec("am start --user 0 -a android.intent.action.VIEW -d http://www.youku.com");
+		} catch (IOException e) {
+		}
 //		System.exit(0);
 	}
 	

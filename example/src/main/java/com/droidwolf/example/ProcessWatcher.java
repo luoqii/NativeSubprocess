@@ -22,6 +22,7 @@ import android.content.Intent;
 import com.droidwolf.fix.FileObserver;
 
 import java.io.File;
+import java.io.IOException;
 
 public class ProcessWatcher {
 	private FileObserver mFileObserver;
@@ -45,9 +46,9 @@ public class ProcessWatcher {
 		}
 	}
 	private void doSomething() {
-//		try {
-//			Runtime.getRuntime().exec("am start --user 0 -n com.droidwolf.example/com.droidwolf.example.WatchDogActivity");
-//		} catch (IOException e) {}
+		try {
+			Runtime.getRuntime().exec("am start --user 0 -n com.droidwolf.example/com.droidwolf.example.WatchDogActivity");
+		} catch (IOException e) {}
 	    mWatchDog.getContext().startActivity(new Intent(mWatchDog.getContext(), com.droidwolf.example.WatchDogActivity.class));
 	}
 

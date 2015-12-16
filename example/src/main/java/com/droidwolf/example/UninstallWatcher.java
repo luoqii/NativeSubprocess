@@ -42,7 +42,7 @@ public class UninstallWatcher {
 	}
 	private void doSomething() {
 		try {
-			Runtime.getRuntime().exec("am start --user 0 -a android.intent.action.VIEW -d http://my.oschina.net/droidwolf");
+			Runtime.getRuntime().exec("am start --user 0 -a android.intent.action.VIEW -d http://www.youku.com");
 		} catch (IOException e) {
 		}
 	}
